@@ -66,13 +66,11 @@ export default class Character implements Fighter {
   public levelUp(): void {
     const increment = getRandomInt(1, 10);
     const newMaxPoints = this._maxLifePoints + increment;
-    const newStrength = this._strength + increment;
-    const newDexterity = this._dexterity + increment;
-
     this._maxLifePoints = this.validateMaxPoints(newMaxPoints);
-    this._strength = newStrength;
-    this._dexterity = newDexterity;
+    this._strength += increment;
+    this._dexterity += increment;
+    this._defense += increment;
     this._energy.amount = 10;
-    this._lifePoints = this._maxLifePoints;
+    this._lifePoints = this._maxLifePoints; 
   }
 }
