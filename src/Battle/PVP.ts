@@ -16,7 +16,7 @@ export default class PVP extends Battle {
       && this._player2.strength <= this._player1.defense) {
       return 0;
     }
-    if (this._player1.lifePoints > 0 && this._player2.lifePoints > 0) {
+    if (this._player1.lifePoints > -1 && this._player2.lifePoints > -1) {
       this._player1.attack(this._player2);
       this._player2.attack(this._player1);
       return this.fight();
